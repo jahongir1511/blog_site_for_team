@@ -4,8 +4,8 @@ from django.db import models
 
 
 class Products(models.Model):
-    image = models.ImageField(upload_to='all/')
-    video = models.FileField(upload_to='all/')
+    image = models.ImageField(upload_to='all/products/')
+    video = models.FileField(upload_to='all/products/')
     name = models.CharField(max_length=200)
     title = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -38,3 +38,15 @@ class Products(models.Model):
 #
 #     def __str__(self):
 #         return f"ID: {self.pk} | User: {self.user.username}"
+
+
+class About(models.Model):
+    image = models.ImageField(upload_to='all/about/')
+    title = models.CharField(max_length=200)
+    body = models.TextField()
+
+    class Meta:
+        db_table = 'about'
+
+    def __str__(self):
+        return f"ID: {self.pk}"

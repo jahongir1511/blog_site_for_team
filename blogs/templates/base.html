@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BlogSite</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'blogs:home' %}">home</a><br><br>
+        <a href="#">Register</a> |
+        <a href="#">Login</a> |
+        <a href="#">About</a>
+    </header>
+
+    <div>
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+</body>
+</html>
